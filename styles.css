@@ -1,8 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Roboto, sans-serif;
     margin: 0;
     padding: 0;
-    background-color:#E0F7FA;
+    background-color: #E0F7FA;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -10,12 +10,9 @@ body {
 }
 
 header {
-    background-image: url('images/banner.png'); /* Imagen de fondo original */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #003366; /* Azul oscuro */
     color: white; /* Color del texto */
-    padding: 40px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -23,15 +20,30 @@ header {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad del texto */
 }
 
-header .header-title, header .header-subtitle {
+.header-container {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0); /* Fondo transparente */
+    padding: 10px; /* Espacio alrededor del logo y texto */
+    background-color: #003366; /* Fondo azul oscuro */
+}
+
+.header-logo {
+    height: 50px; /* Ajusta el tamaño según sea necesario */
+    width: auto; /* Mantiene las proporciones de la imagen */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.header-title, .header-subtitle {
     margin: 0;
-    font-size: 1.5em;
+    font-size: 24px;
     font-weight: bold;
-    color: white;
+    color: #ffffff; /* Letras blancas */
 }
 
 nav {
     position: absolute;
+    font-weight: bold;
     top: 30px;
     right: 30px;
     display: flex;
@@ -39,16 +51,16 @@ nav {
 }
 
 nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 0;
-    transition: color 0.3s ease;
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    padding: 10px 20px; /* Espaciado dentro de los botones */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Suaviza la transición de color */
 }
 
 nav a:hover {
-    color: #f0f0f0;
+    background-color: orange; /* Naranja coral */
+    color: #003366; /* Azul oscuro del fondo */
 }
 
 main {
@@ -56,7 +68,7 @@ main {
     padding: 40px;
     padding-bottom: calc(60px + 10px);
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: #F8F4F1; /* Beige suave */
 }
 
 section {
@@ -82,11 +94,11 @@ section p {
 }
 
 footer {
-    background: linear-gradient(180deg, #333 0%, #555 100%); /* Gradiente de fondo */
-    color: white;
-    text-align: center;
+    position: relative;
     padding: 20px;
-    border-top: 2px solid #888;
+    background-color: #333; /* Color del fondo del footer */
+    color: white; /* Color del texto del footer */
+    text-align: center;
 }
 
 .social-icons {
@@ -102,9 +114,30 @@ footer {
 
 .social-icons a {
     color: #f0f0f0;
-    margin: 0 15px;
+    margin: 0 10px;
     text-decoration: none;
     font-size: 28px;
+}
+
+.social-icons a:hover {
+    opacity: 0.8;
+}
+
+.scroll-to-top {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    background-color: #333; /* Fondo del botón */
+    border-radius: 50%;
+    padding: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.scroll-to-top:hover {
+    background-color: #555; /* Fondo del botón al pasar el mouse */
 }
 
 .social-icons a:hover {
@@ -129,38 +162,53 @@ footer {
     color: #27ae60;
 }
 
-@media (max-width: 600px) {
-    header .header-title {
-        font-size: 1.2em;
+/* Carrusel */
+.carousel-inner img {
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+    height: 400px; /* Ajusta la altura según tus necesidades */
+}
+@media (max-width: 768px) {
+    .header-logo {
+        max-width: 100px;
+    }
+    
+    .header-subtitle {
+        font-size: 1rem;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     nav a {
-        margin: 0 5px;
-        padding: 8px 0;
-        font-size: 0.9em;
+        margin: 10px 0;
     }
 
-    main {
-        padding: 20px;
-        padding-bottom: calc(60px + 8px);
+    .social-icons {
+        font-size: 20px;
     }
 
-    section h2 {
-        font-size: 1.5em;
+    .scroll-to-top {
+        display: block; /* Mostrar en móviles */
     }
+}
 
-    section p {
-        font-size: 0.9em;
+@media (max-width: 576px) {
+    .header-logo {
+        max-width: 80px;
     }
-
-    footer {
-        font-size: 0.9em;
-        padding: 15px 10px;
-        height: 60px;
+    
+    .header-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    nav a {
+        margin: 5px 0;
     }
 
     .social-icons a {
-        font-size: 24px;
-        margin: 0 5px;
+        font-size: 18px;
     }
 }
