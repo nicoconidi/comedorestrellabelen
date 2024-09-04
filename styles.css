@@ -165,7 +165,7 @@ footer {
 /* Carrusel */
 .carousel-inner img {
     object-fit: cover; /* Asegura que la imagen cubra el contenedor */
-    height: 400px; /* Ajusta la altura según tus necesidades */
+    height: 365px; /* Ajusta la altura según tus necesidades */
 }
 @media (max-width: 768px) {
     .header-logo {
