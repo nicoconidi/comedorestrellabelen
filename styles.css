@@ -81,11 +81,6 @@ section.visible {
     opacity: 1;
 }
 
-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #222;
-}
 
 section p {
     font-size: 1.1em;
@@ -94,62 +89,102 @@ section p {
 }
 
 footer {
-    position: relative;
-    padding: 20px;
     background-color: #333; /* Color del fondo del footer */
     color: white; /* Color del texto del footer */
     text-align: center;
+    padding: 40px 20px; /* Espaciado alrededor del footer */
+}
+
+.footer-bottom {
+    margin-top: 20px; /* Espacio entre el mapa y el texto de derechos de autor */
+    font-size: 0.9em; /* Tamaño del texto */
+    color: white; /* Color del texto */
+    padding: 10px 0; /* Espaciado superior e inferior para centrar mejor */
+	border-top: 1px solid white;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around; /* Distribuye mejor el espacio */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.contact-info, .map-container {
+    text-align: left; /* Para que el contenido interno no se centre */
+}
+
+.contact-info {
+    margin-bottom: 20px; /* Ajusta la separación entre contacto y mapa */
+}
+
+.contact-info h2, .map-container h3 {
+    color: #FFB74D; /* Color para los encabezados */
+}
+
+.map-container {
+    flex: 2; /* El mapa ocupa más espacio */
+    display: flex; /* Permite centrar el mapa */
+    justify-content: center; /* Centra el contenido */
+}
+
+iframe {
+    border-radius: 8px; /* Bordes redondeados para el mapa */
+    max-width: 100%; /* Asegúrate de que el mapa no se desborde */
+    height: 430px; /* Ajusta la altura según tus necesidades */
+	width: 793px;
 }
 
 .social-icons {
-    margin-top: 10px;
-}
-
-.social-icons span {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 1.0em;
-    color: #f0f0f0;
+    margin-top: 10px; /* Ajusta el margen superior */
+    display: block; /* Cambia a bloque para colocar íconos uno debajo del otro */
 }
 
 .social-icons a {
     color: #f0f0f0;
-    margin: 0 10px;
     text-decoration: none;
-    font-size: 28px;
+	margin: 26px 0;
+    font-size: 1.1em; /* Ajusta el tamaño del texto para que coincida con los íconos de contacto */
+    display: flex; /* Usar flex para alinear íconos y texto */
+    align-items: center; /* Centrar verticalmente */
+    margin-bottom: 4px; /* Espacio entre los enlaces */
 }
 
-.social-icons a:hover {
-    opacity: 0.8;
+
+.contact-info p {
+    margin:26px 0; /* Margen entre los párrafos */
 }
 
-.scroll-to-top {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-size: 24px;
-    color: white;
-    background-color: #333; /* Fondo del botón */
-    border-radius: 50%;
-    padding: 10px;
-    text-decoration: none;
-    transition: background-color 0.3s;
+.contact-info i {
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+    color: #27ae60; /* Color verde para los íconos */
+    font-size: 1.5em; /* Ajusta el tamaño del ícono */
+    vertical-align: middle; /* Asegura que el ícono esté alineado con el texto */
 }
 
-.scroll-to-top:hover {
-    background-color: #555; /* Fondo del botón al pasar el mouse */
+.contact-info p, .social-icons a {
+    display: flex; /* Usamos flex para alinear los íconos con el texto */
+    align-items: center; /* Alinea los íconos y el texto verticalmente */
+    margin: 30px 0; /* Ajusta el espaciado */
 }
 
-.social-icons a:hover {
-    opacity: 0.8;
+.social-icons a i {
+    font-size: 1.5em; /* Ajusta el tamaño de los íconos de redes sociales */
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
 }
 
 .social-icons .fa-facebook-f {
-    color: #1877F2;
+    font-size: 1.6em; /* Ajusta el tamaño del ícono de Facebook */
+    margin-right: 15px; /* Mantén el margen entre el ícono y el texto */
+}
+
+.social-icons .fa-facebook-f {
+    color: #27ae60;
 }
 
 .social-icons .fa-instagram {
-    color: #C13584;
+    color: #27ae60;
 }
 
 .contact-info {
@@ -157,45 +192,13 @@ footer {
     margin-top: 20px;
 }
 
-.contact-info i {
-    margin-right: 10px;
-    color: #27ae60;
-}
-
 /* Carrusel */
 .carousel-inner img {
     object-fit: cover; /* Asegura que la imagen cubra el contenedor */
-    height: 365px; /* Ajusta la altura según tus necesidades */
+    height: 400px; /* Ajusta la altura según tus necesidades */
 }
+
 @media (max-width: 768px) {
-    .header-logo {
-        max-width: 100px;
-    }
-    
-    .header-subtitle {
-        font-size: 1rem;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav a {
-        margin: 10px 0;
-    }
-
-    .social-icons {
-        font-size: 20px;
-    }
-
-    .scroll-to-top {
-        display: block; /* Mostrar en móviles */
-    }
-}
-
-@media (max-width: 576px) {
     .header-logo {
         max-width: 80px;
     }
@@ -210,5 +213,14 @@ footer {
 
     .social-icons a {
         font-size: 18px;
+    }
+
+    .footer-container {
+        flex-direction: column; /* Cambia a columna para pantallas pequeñas */
+        text-align: center; /* Centra el contenido en pantallas pequeñas */
+    }
+
+    .contact-info, .map-container {
+        text-align: center; /* Alinea el texto al centro en pantallas pequeñas */
     }
 }
