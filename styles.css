@@ -14,18 +14,17 @@ header {
     color: white; /* Color del texto */
     padding: 20px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row; /* Alinear en fila */
+    align-items: center; /* Centrar verticalmente */
     position: relative;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad del texto */
 }
 
 .header-container {
     display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0); /* Fondo transparente */
-    padding: 10px; /* Espacio alrededor del logo y texto */
-    background-color: #003366; /* Fondo azul oscuro */
+    align-items: center; /* Centrar verticalmente */
+    width: 100%; /* Para que ocupe todo el ancho */
+    justify-content: space-between; /* Espacio entre logo y navbar */
 }
 
 .header-logo {
@@ -42,12 +41,11 @@ header {
 }
 
 nav {
-    position: absolute;
-    font-weight: bold;
-    top: 30px;
-    right: 30px;
-    display: flex;
-    align-items: center;
+	position: absolute;
+	font-weight: bold;
+    display: flex; /* Asegúrate de que sea flex */
+    align-items: center; /* Centrar verticalmente los enlaces */
+    margin-left: auto; /* Empujar el nav a la derecha */
 }
 
 nav a {
@@ -193,9 +191,29 @@ iframe {
 }
 
 /* Carrusel */
+.carousel {
+    width: 100%;
+    max-width: 1200px; /* Ajusta esto según el ancho máximo que quieras */
+    margin: 0 auto; /* Centra el carrusel en la página */
+    overflow: hidden;
+}
 .carousel-inner img {
     object-fit: cover; /* Asegura que la imagen cubra el contenedor */
-    height: 400px; /* Ajusta la altura según tus necesidades */
+    width: 100%; /* Asegura que las imágenes ocupen todo el ancho del contenedor */
+    height: 445px; /* Ajusta la altura según tus necesidades */
+    transition: transform 0.5s ease; /* Suaviza la transición entre imágenes */
+}
+
+.carousel-inner {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .carousel-inner img {
+        height: 250px; /* Ajusta para pantallas más pequeñas */
+    }
 }
 
 @media (max-width: 768px) {
