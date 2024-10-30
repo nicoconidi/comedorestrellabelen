@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Mostrar u ocultar la flecha según la posición de desplazamiento
 window.addEventListener("scroll", function() {
     const backToTop = document.getElementById("backToTop");
-    if (window.scrollY > 200) { // Mostrar al desplazarse 200px hacia abajo
+    if (window.scrollY > 500) { // Mostrar al desplazarse 200px hacia abajo
         backToTop.style.display = "flex";
     } else {
         backToTop.style.display = "none";
