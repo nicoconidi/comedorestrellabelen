@@ -40,6 +40,15 @@ header {
     color: #ffffff; /* Letras blancas */
 }
 
+header .navbar-toggler {
+    background-color: #ffffff; /* Fondo blanco para el botón de menú */
+    border-color: #ffffff; /* Color del borde */
+}
+
+header .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 51, 102, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    /* Esto cambia el color de las líneas del icono de hamburguesa a azul oscuro */
+}
 nav {
 	position: absolute;
 	font-weight: bold;
@@ -84,6 +93,29 @@ section p {
     font-size: 1.1em;
     margin: 0 0 20px;
     line-height: 1.8;
+}
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 0px; /* Coloca la flecha justo en el borde derecho */
+    width: 40px;
+    height: 40px;
+    background-color: rgba(128, 128, 128, 0.8);
+    border-radius: 8px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+#backToTop img {
+    width: 100%;
+    height: auto;
+}
+
+#backToTop:hover {
+    opacity: 0.8;
 }
 
 footer {
