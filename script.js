@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
 // Mostrar u ocultar la flecha según la posición de desplazamiento
 window.addEventListener("scroll", function() {
     const backToTop = document.getElementById("backToTop");
@@ -47,4 +46,18 @@ window.addEventListener("scroll", function() {
     } else {
         backToTop.style.display = "none";
     }
+});
+
+// Desplazamiento suave hacia arriba al hacer clic en el botón
+document.getElementById("backToTop").addEventListener("click", function() {
+    window.scrollTo({
+        top: 0, // Lleva la página al inicio, directamente a top 0
+        behavior: "smooth" // Desplazamiento suave
+    });
+    setTimeout(() => {
+        window.scrollTo({
+            top: -10, // Ajuste adicional
+            behavior: "smooth"
+        });
+    }, 100); // Espera medio segundo después de llegar al top inicial
 });
