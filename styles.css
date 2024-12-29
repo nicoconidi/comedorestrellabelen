@@ -244,7 +244,7 @@ iframe {
 
 @media (max-width: 768px) {
     .carousel-inner img {
-        height: 300px; /* Ajusta para pantallas más pequeñas */
+        height: 250px; /* Ajusta para pantallas más pequeñas */
     }
 }
 
